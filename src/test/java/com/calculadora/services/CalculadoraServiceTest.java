@@ -47,4 +47,37 @@ class CalculadoraServiceTest {
 		
 	}
 	
+	@Test
+	void restaEnterosTest() throws Exception {
+
+		Double EXPECTED = (double)-1;
+		
+		String operador = "RESTA";
+		BigDecimal ope1 = new BigDecimal(3);
+		BigDecimal ope2 = new BigDecimal(4);
+		
+		Double actual 
+			= calculadoraService.ejecutar(operador, ope1, ope2);
+		
+		assertThat(actual, is(EXPECTED));
+		
+	}
+	
+	
+	@Test
+	void restaDecimalesTest() throws Exception {
+
+		Double EXPECTED = (double)-1.1;
+		
+		String operador = "RESTA";
+		BigDecimal ope1 = new BigDecimal(3.4);
+		BigDecimal ope2 = new BigDecimal(4.5);
+		
+		Double actual 
+			= calculadoraService.ejecutar(operador, ope1, ope2);
+		
+		assertThat(actual, is(EXPECTED));
+		
+	}
+	
 }
