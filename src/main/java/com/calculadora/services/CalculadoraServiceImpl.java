@@ -34,7 +34,7 @@ public class CalculadoraServiceImpl implements CalculadoraService {
 		else if ("RESTA".equals(operador))
 			res = ope1.subtract(ope2);
 		else
-			throw new OperationNotSupportException();
+			throw new OperationNotSupportException("Operacion '" + operador + "' no soportado");
 
 		res = res.setScale(NRO_DECIMALES, RoundingMode.HALF_UP);
 		

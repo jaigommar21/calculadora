@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.calculadora.dtos.ResultadoOperacion;
 import com.calculadora.services.CalculadoraService;
-import com.calculadora.services.dtos.ResultadoOperacion;
 
 @RestController
 @RequestMapping("/api")
@@ -37,11 +37,11 @@ public class CalculadoraController {
 	public ResponseEntity<?> calcular(@PathVariable String operador, @PathVariable BigDecimal ope1,
 			@PathVariable BigDecimal ope2) throws Exception {
 
+		log.info("Calling metodo calcular()...!");		
+		
 		// Invocamos a la capa de servicios
 		Double resultado 
 			= calculadoraService.ejecutar(operador, ope1, ope2);
-		
-		log.info(">>..." + resultado);
 		
 		// Creamos resultado de operacion
 		ResultadoOperacion res = new ResultadoOperacion();

@@ -1,4 +1,4 @@
-package com.calculadora.services.dtos;
+package com.calculadora.dtos;
 
 import java.math.BigDecimal;
 
