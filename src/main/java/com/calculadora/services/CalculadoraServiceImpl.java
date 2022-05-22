@@ -35,10 +35,10 @@ public class CalculadoraServiceImpl implements CalculadoraService {
 			res = ope1.subtract(ope2);
 		else
 			throw new OperationNotSupportException();
+
+		res = res.setScale(NRO_DECIMALES, RoundingMode.HALF_UP);
 		
-		res.setScale(NRO_DECIMALES, RoundingMode.HALF_UP);
-		
-		return res.doubleValue();	
+		return res.doubleValue();
 	}
 
 }

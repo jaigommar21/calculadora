@@ -36,11 +36,11 @@ class CalculadoraServiceTest {
 	@Test
 	void sumaDecimaleTest() throws Exception {
 
-		Double EXPECTED = 7.5;
+		Double EXPECTED = 7.8;
 		
 		String operador = "SUMA";
-		BigDecimal ope1 = new BigDecimal(3.2);
-		BigDecimal ope2 = new BigDecimal(4.3);
+		BigDecimal ope1 = new BigDecimal(3.4);
+		BigDecimal ope2 = new BigDecimal(4.4);
 		
 		Double actual 
 			= calculadoraService.ejecutar(operador, ope1, ope2);
@@ -64,12 +64,12 @@ class CalculadoraServiceTest {
 		assertThat(actual, is(EXPECTED));
 		
 	}
-	
+
 	
 	@Test
 	void restaDecimalesTest() throws Exception {
 
-		Double EXPECTED = (double)-1.1;
+		Double EXPECTED = -1.1;
 		
 		String operador = "RESTA";
 		BigDecimal ope1 = new BigDecimal(3.4);
@@ -82,7 +82,7 @@ class CalculadoraServiceTest {
 		
 	}
 	
-	
+
 	@Test
 	void operacionNoSoportadaTest() throws Exception {
 
@@ -97,5 +97,5 @@ class CalculadoraServiceTest {
 		}
 		
 		
-	}
+	} 
 }
