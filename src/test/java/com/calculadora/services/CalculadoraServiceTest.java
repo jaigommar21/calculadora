@@ -9,6 +9,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.calculadora.exceptions.OperationNotSupportException;
+
 @SpringBootTest
 class CalculadoraServiceTest {
 
@@ -80,4 +82,20 @@ class CalculadoraServiceTest {
 		
 	}
 	
+	
+	@Test
+	void operacionNoSoportadaTest() throws Exception {
+
+		String operador = "MULTIPLICACION";
+		BigDecimal ope1 = new BigDecimal(3);
+		BigDecimal ope2 = new BigDecimal(4);
+		
+		try {
+			calculadoraService.ejecutar(operador, ope1, ope2);
+		} catch (Exception e) {
+			assertThat(true, is(e instanceof OperationNotSupportException));
+		}
+		
+		
+	}
 }
