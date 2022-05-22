@@ -27,10 +27,11 @@ public class CalculadoraController {
 	 * @param ope1
 	 * @param ope2
 	 * @return
+	 * @throws Exception 
 	 */
 	@GetMapping("/calcular/{operador}/{ope1}/{ope2}")
 	public ResponseEntity<?> calcular(@PathVariable String operador, @PathVariable BigDecimal ope1,
-			@PathVariable BigDecimal ope2) {
+			@PathVariable BigDecimal ope2) throws Exception {
 
 		BigDecimal resultado 
 			= calculadoraService.ejecutar(operador, ope1, ope2);
