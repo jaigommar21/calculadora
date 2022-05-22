@@ -52,7 +52,7 @@ public class CalculadoraController {
 		res.setResultado(resultado);
 		
 		// Respuesta JSON
-		return new ResponseEntity<ResultadoOperacion>(res,HttpStatus.ACCEPTED);
+		return new ResponseEntity<ResultadoOperacion>(res,HttpStatus.OK);
 		
 	}
 
