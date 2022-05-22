@@ -33,10 +33,10 @@ public class CalculadoraController {
 	public ResponseEntity<?> calcular(@PathVariable String operador, @PathVariable BigDecimal ope1,
 			@PathVariable BigDecimal ope2) throws Exception {
 
-		BigDecimal resultado 
+		Double resultado 
 			= calculadoraService.ejecutar(operador, ope1, ope2);
 		
-		return new ResponseEntity<BigDecimal>(resultado,HttpStatus.ACCEPTED);
+		return new ResponseEntity<Double>(resultado,HttpStatus.ACCEPTED);
 		
 	}
 
