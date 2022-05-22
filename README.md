@@ -31,7 +31,7 @@ mvn clean install
 Ejecución de la aplicación:
 
 ```
-java -jar target/calculadora.jar`
+java -jar target/calculadora.jar
 ```
 
 Con esto levantamos nuestro servicios REST en `http://localhost:8080/api/calcular`
