@@ -14,7 +14,7 @@ Usa la libreria tracer
 
 1. Descargar el repositorio girhub
 2. Instalar la libreria tracer-1.0.0.jar en el repositorio local
-3. Instalación de Maven
+3. Generación del instalador de la aplicación
 4. Ejecutar el JAR de la carpeta /target
 
 
