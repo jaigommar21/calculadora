@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.calculadora.dtos.ResultadoOperacion;
 import com.calculadora.services.CalculadoraService;
 
+import io.corp.calculator.TracerImpl;
+
 @RestController
 @RequestMapping("/api")
 public class CalculadoraController {
@@ -24,6 +26,9 @@ public class CalculadoraController {
 	@Autowired
 	CalculadoraService calculadoraService;
 
+	// Usando libreria externa
+	TracerImpl trace = new TracerImpl();
+	
 	/**
 	 * Realiza operacion de calculo
 	 * 
@@ -38,6 +43,9 @@ public class CalculadoraController {
 			@PathVariable BigDecimal ope2) throws Exception {
 
 		log.info("Calling metodo calcular()...!");		
+
+		// Uso de la traza de la libreria externa
+		trace.trace("Calling metodo calcular()...!");
 		
 		// Invocamos a la capa de servicios
 		Double resultado 
