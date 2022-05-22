@@ -20,4 +20,15 @@ public class CalculadoraHandleException {
 		
 		return new ResponseEntity<MensajeError>(error,HttpStatus.INTERNAL_SERVER_ERROR);
 	}
+
+	@ExceptionHandler(NumberFormatException.class)
+	public ResponseEntity<MensajeError> NumberFormatException(java.lang.NumberFormatException e) {
+		
+		MensajeError error = new MensajeError();
+	
+		error.setMensaje("Los operadores deben ser numericos");
+		
+		return new ResponseEntity<MensajeError>(error,HttpStatus.BAD_REQUEST);
+	}
+
 }
