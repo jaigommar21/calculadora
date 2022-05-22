@@ -21,7 +21,7 @@ Usa la libreria tracer
 Realizar los siguiente pasos en una consolta:
 
 ```
-git clone https://github.com/RotaruDan/calculadora
+git clone https://github.com/jgomezm-tecsup/calculadora
 cd calculadora
 mvn org.apache.maven.plugins:maven-install-plugin:2.5.2:install-file -Dfile=./lib/tracer-1.0.0.jar
 mvn clean install
